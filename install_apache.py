@@ -3,6 +3,7 @@
 # Improvements: error handling with subprocess.CalledProcessError, use logging framework instead of print statements 
 # Improvements: input validation for user commands, unit tests
 # Improvements: run commands in github actions runner
+# Improvements: non-linux distro specific
 
 # Importing the subprocess module to run the shell commands
 import subprocess 
