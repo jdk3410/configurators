@@ -2,6 +2,7 @@
 # Author: jdk3410 
 # Improvements: error handling with subprocess.CalledProcessError, use logging framework instead of print statements 
 # Improvements: input validation for user commands, unit tests
+# Improvements: run commands in github actions runner
 
 # Importing the subprocess module to run the shell commands
 import subprocess 
@@ -11,7 +12,8 @@ try:
     subprocess.run(["sudo", "apt-get", "-y", "install", "apache2"]) 
 
     # Add a placeholder index.html file to the apache2 root directory and start it
-    subprocess.run(["echo", f"Hello World! from {subprocess.check_output('hostname').decode().strip()}", ">", "/var/www/html/index.html"])
+    with open("/var/www/html/index.html", "w") as file:
+        file.write(f"Hello World! from {subprocess.check_output('hostname').decode().strip()}")
     subprocess.run(["sudo", "systemctl", "start", "apache2"])
 
     # Ensure that apache2 starts on boot
