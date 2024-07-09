@@ -1,0 +1,22 @@
+# GitHub actions workflow to test that Python subprocess.run commands execute successfully
+
+name: Verify Apache Installation
+
+on: 
+  push:
+    branches:
+       - main
+
+jobs:
+  install_apache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Apache
+        run: |
+          sudo apt-get update
+          python3 install_apache.py
+
+
