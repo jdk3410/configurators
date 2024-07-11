@@ -8,8 +8,6 @@ on:
       - 'install_*.py'
     branches:
        - main
-    paths:
-        - 'install_apache.py'
   workflow_dispatch:     
 
 jobs:
