@@ -6,13 +6,15 @@ on:
   push:
     branches:
        - main
+    paths:
+        - 'install_apache.py'
 
 jobs:
   install_apache:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install Apache
         run: |
