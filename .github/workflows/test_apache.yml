@@ -4,18 +4,24 @@ name: Verify Apache Installation
 
 on: 
   push:
+    paths:
+      - 'install_*.py'
     branches:
        - main
     paths:
         - 'install_apache.py'
+  workflow_dispatch:     
 
 jobs:
   install_apache:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.0.0
 
+      - name: Adjust directory permissions
+        run: sudo chown -R $USER:$USER /var/www/html/
+      
       - name: Install Apache
         run: |
           sudo apt-get update
