@@ -3,6 +3,7 @@
 # Python 3 compatiblity only
 # Sanitized for external use
 # TODO: input validation, VPN addition, might be good to automatically calculate number of NAT statements
+# TODO: add logging framework, error handling, unit tests, integration tests, continuous integration, flask web interface on heroku
 
 
 import os
