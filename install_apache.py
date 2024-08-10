@@ -6,11 +6,11 @@
 # Improvements: non-linux distro specific 
 
 # Importing the subprocess module to run the shell commands
-import subprocess 
+import subprocess
 
 try:
     # Install apache2 using apt-get
-    subprocess.run(["sudo", "apt-get", "-y", "install", "apache2"]) 
+    subprocess.run(["sudo", "apt-get", "-y", "install", "apache2"])
 
     # Add a placeholder index.html file to the apache2 root directory and start it
     with open("/var/www/html/index.html", "w") as file:
